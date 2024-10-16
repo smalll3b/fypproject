@@ -84,4 +84,11 @@
         android:text="切換主題"
         android:layout_marginTop="30dp"
         android:layout_gravity="end"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
 </LinearLayout>
