@@ -5,6 +5,19 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- 新增商品标题 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新增商品"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
     <!-- 商品图片 -->
     <ImageView
         android:id="@+id/ivProductImage"
@@ -12,7 +25,7 @@
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:contentDescription="@string/product_image"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="?attr/selectableItemBackgroundBorderless"
@@ -43,6 +56,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp"/>
 
+    <!-- 商品品牌 -->
+    <EditText
+        android:id="@+id/etProductBrand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="商品品牌"
+        app:layout_constraintTop_toBottomOf="@+id/etProductName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
     <!-- 商品价格 -->
     <EditText
         android:id="@+id/etProductPrice"
@@ -50,7 +74,19 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:hint="商品价格"
-        app:layout_constraintTop_toBottomOf="@+id/etProductName"
+        app:layout_constraintTop_toBottomOf="@+id/etProductBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 商品重量 -->
+    <EditText
+        android:id="@+id/etProductWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="商品重量 (克)"
+        app:layout_constraintTop_toBottomOf="@+id/etProductPrice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp"/>
@@ -61,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="新增商品"
-        app:layout_constraintTop_toBottomOf="@+id/etProductPrice"
+        app:layout_constraintTop_toBottomOf="@+id/etProductWeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
