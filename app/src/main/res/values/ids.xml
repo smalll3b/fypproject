@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="btnSelectImage" type="id" />
+    <item name="ivProductImageDetail" type="id" />
+    <item name="tvProductName" type="id" />
+    <item name="tvProductBrand" type="id" />
+    <item name="tvProductPrice" type="id" />
+    <item name="tvProductWeight" type="id" />
+    <item name="tvProductQuantity" type="id" />
+    <item name="tvProductDescription" type="id" />
 </resources>

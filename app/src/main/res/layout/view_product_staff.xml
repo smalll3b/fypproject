@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 商品图片 -->
+    <ImageView
+        android:id="@+id/ivProductImageDetail"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/product_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- 商品名称 -->
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="商品名称"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/ivProductImageDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 商品品牌 -->
+    <TextView
+        android:id="@+id/tvProductBrand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="商品品牌"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 商品价格 -->
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="商品价格"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 商品重量 -->
+    <TextView
+        android:id="@+id/tvProductWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="商品重量 (克)"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 商品数量 -->
+    <TextView
+        android:id="@+id/tvProductQuantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="商品数量"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 商品描述 -->
+    <TextView
+        android:id="@+id/tvProductDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="商品描述"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:minLines="4"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
