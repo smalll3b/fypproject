@@ -22,5 +22,14 @@ public class AddProductActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // 查看商品列表按钮
+        Button btnViewProductList = findViewById(R.id.btnViewProductList);
+        btnViewProductList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddProductActivity.this, ProductListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
