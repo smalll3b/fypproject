@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Talk!"
+        android:text="賣電腦零件系統"
         android:textSize="30sp"
         android:layout_marginTop="-50dp"/>
 
