@@ -13,7 +13,7 @@
         android:theme="@style/Theme.FypProject"
         tools:targetApi="31">
         <activity
-            android:name=".StorageActivity"
+            android:name=".insertActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +30,14 @@
         <activity
             android:name=".ProductListActivity"
             android:exported="false" />
+        <activity
+            android:name=".DeleteProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProductActivity"
+            android:exported="false" />
+
+
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 </manifest>

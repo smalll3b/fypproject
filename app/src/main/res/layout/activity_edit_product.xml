@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Product Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/etProductBrand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Product Brand"
+        app:layout_constraintTop_toBottomOf="@id/etProductName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/etProductPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Product Price"
+        app:layout_constraintTop_toBottomOf="@id/etProductBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/etProductWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Product Weight"
+        app:layout_constraintTop_toBottomOf="@id/etProductPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/etProductDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Product Description"
+        app:layout_constraintTop_toBottomOf="@id/etProductWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/etProductQuantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Product Quantity"
+        app:layout_constraintTop_toBottomOf="@id/etProductDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <ImageView
+        android:id="@+id/ivProductImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toBottomOf="@id/etProductQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Update Product"
+        app:layout_constraintTop_toBottomOf="@id/ivProductImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
