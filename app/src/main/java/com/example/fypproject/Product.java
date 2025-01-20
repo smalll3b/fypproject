@@ -1,21 +1,24 @@
 package com.example.fypproject;
 
 public class Product {
-    public String _name;
-    public String _brand;
-    public float  _price;
-    public float  _weight;
-    public int    _quantity;
-    public String _description;
-    public String _imageUri;
+    public String name;
+    public String brand;
+    public String price;  // 将数据类型改为String以匹配Firebase数据
+    public String weight; // 将数据类型改为String以匹配Firebase数据
+    public String quantity;
+    public String description;
+    public String imageUrl;
 
-    public Product(String name, String brand, float price, float weight, int quantity, String description, String imageUri){
-        this._name = name;
-        this._brand = brand;
-        this._price = price;
-        this._weight = weight;
-        this._quantity = quantity;
-        this._description = description;
-        this._imageUri = imageUri;
+    // No-argument constructor required for Firebase
+    public Product() {}
+
+    public Product(String name, String brand, String price, String weight, String quantity, String description, String imageUrl) {
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.weight = weight;
+        this.quantity = quantity;
+        this.description = description;
+        this.imageUrl = imageUrl;
     }
 }

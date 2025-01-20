@@ -36,6 +36,7 @@
             android:layout_marginEnd="8dp" />
 
         <EditText
+            android:id="@+id/emailEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -56,6 +57,7 @@
             android:layout_marginEnd="8dp" />
 
         <EditText
+            android:id="@+id/passwordEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -65,6 +67,7 @@
 
     <!-- 提交按鈕 -->
     <Button
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="登入"
@@ -72,24 +75,9 @@
 
     <!-- 註冊按鈕 -->
     <Button
+        android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="註冊"
         android:layout_marginTop="10dp"/>
-    <!-- 切換主題按鈕 -->
-    <Button
-        android:id="@+id/switch_theme_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="切換主題"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="end"/>
-    <!-- 切换页面按钮 -->
-    <Button
-        android:id="@+id/navigate_to_second_activity_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="切换页面"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
