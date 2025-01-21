@@ -51,6 +51,12 @@
         <activity
             android:name=".indexActivity"
             android:exported="false" />
+        <activity
+            android:name=".insertActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

@@ -1,12 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".AdminLoginActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="登入 Login"
+        android:text="管理員登入 Login"
         android:textSize="30sp"
         android:layout_marginTop="50dp" />
 
@@ -31,18 +30,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="用戶ID:"
+            android:text="管理員ID:"
             android:textSize="20sp"
             android:layout_marginEnd="8dp" />
 
         <EditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/adminIdEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="請輸入你的用戶id"
+            android:hint="請輸入你的管理員ID"
             android:inputType="text" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,12 +52,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="用戶密碼："
+            android:text="密碼："
             android:textSize="20sp"
             android:layout_marginEnd="8dp" />
 
         <EditText
-            android:id="@+id/passwordEditText"
+            android:id="@+id/adminPasswordEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -65,23 +65,13 @@
             android:inputType="textPassword" />
     </LinearLayout>
 
-    <!-- 提交按鈕 -->
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/adminLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="登入"
         android:layout_marginTop="30dp"/>
 
-    <!-- 註冊按鈕 -->
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="註冊"
-        android:layout_marginTop="10dp"/>
-
-    <!-- 切換使用者按鈕 -->
     <Button
         android:id="@+id/switchUserButton"
         android:layout_width="wrap_content"
