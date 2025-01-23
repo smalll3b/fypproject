@@ -1,10 +1,11 @@
 package com.example.fypproject;
 
 public class Product {
+    public String id;  // Add id field
     public String name;
     public String brand;
-    public String price;  // 将数据类型改为String以匹配Firebase数据
-    public String weight; // 将数据类型改为String以匹配Firebase数据
+    public String price;
+    public String weight;
     public String quantity;
     public String description;
     public String imageUrl;
@@ -12,7 +13,8 @@ public class Product {
     // No-argument constructor required for Firebase
     public Product() {}
 
-    public Product(String name, String brand, String price, String weight, String quantity, String description, String imageUrl) {
+    public Product(String id, String name, String brand, String price, String weight, String quantity, String description, String imageUrl) {
+        this.id = id;
         this.name = name;
         this.brand = brand;
         this.price = price;

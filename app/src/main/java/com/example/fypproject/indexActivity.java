@@ -61,7 +61,10 @@ public class indexActivity extends AppCompatActivity {
                 productList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Product product = snapshot.getValue(Product.class);
-                    productList.add(product);
+                    if (product != null) {
+                        product.id = snapshot.getKey(); // Set the id field
+                        productList.add(product);
+                    }
                 }
                 filter(searchEditText.getText().toString());
             }
