@@ -11,6 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -89,18 +94,30 @@ public class StorageActivity extends AppCompatActivity {
     private void openImageSelector() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        // startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        launcher.launch(intent);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            selectedImageUri = data.getData();
-            displayImage(selectedImageUri);
-            uploadImage(selectedImageUri);
-        }
-    }
+    ActivityResultLauncher<Intent> launcher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    Uri selectedImageUri = result.getData().getData();
+                    if (selectedImageUri != null) {
+                        displayImage(selectedImageUri);
+                        uploadImage(selectedImageUri);
+                    }
+                }
+            });
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+//            selectedImageUri = data.getData();
+//            displayImage(selectedImageUri);
+//            uploadImage(selectedImageUri);
+//        }
+//    }
 
     private void displayImage(Uri imageUri) {
         imageView.setImageURI(imageUri);
@@ -134,7 +151,7 @@ public class StorageActivity extends AppCompatActivity {
 
     private void downloadImageFromFirebase() {
         // 创建存储引用
-        StorageReference pathReference = storageRef.child("images/msf:18");
+        StorageReference pathReference = storageRef.child("images/1000094648");
 
         // 获取下载 URL
         pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -156,16 +173,31 @@ public class StorageActivity extends AppCompatActivity {
         });
     }
 
+//    private boolean checkPermissions() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+//        }
+//        return true;
+//    }
+
     private boolean checkPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+            int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+            Log.d("StorageActivity", "Permission check: " + permissionCheck);
+            return permissionCheck == PackageManager.PERMISSION_GRANTED;
         }
         return true;
     }
+//    private void requestPermissions() {
+//        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION);
+//    }
 
     private void requestPermissions() {
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION);
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.READ_MEDIA_IMAGES},
+                REQUEST_PERMISSION);
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
