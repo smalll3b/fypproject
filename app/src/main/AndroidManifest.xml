@@ -57,6 +57,15 @@
         <activity
             android:name=".AdminLoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".editActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StaffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AIChatActivity"
+            android:exported="false" />
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

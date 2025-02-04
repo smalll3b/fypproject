@@ -24,10 +24,10 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/aiChatBtn"
+            android:id="@+id/homebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AI Chat" />
+            android:text="新增商品" />
 
         <View
             android:layout_width="1dp"
@@ -35,6 +35,7 @@
             android:background="#000000" />
 
         <Button
+            android:id="@+id/profilebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="個人資料" />
@@ -45,6 +46,7 @@
             android:background="#000000" />
 
         <Button
+            android:id="@+id/settingsbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="設定" />

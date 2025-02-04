@@ -25,7 +25,7 @@ public class AdminLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Handle admin login logic here
-                Intent intent = new Intent(AdminLoginActivity.this, insertActivity.class);
+                Intent intent = new Intent(AdminLoginActivity.this, StaffActivity.class);
                 startActivity(intent);
                 finish(); // End current activity
             }
