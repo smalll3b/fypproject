@@ -65,10 +65,16 @@ public class AIChatActivity extends AppCompatActivity {
                 .addHeader("Authorization", "Bearer " + API_KEY)
                 .build();
 
+        System.out.println("API_KEY: " + API_KEY); // 打印API_KEY進行檢查
+        System.out.println("Endpoint: " + ENDPOINT); // 打印終端點URL進行檢查
+
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                runOnUiThread(() -> chatTextView.setText("Failed to get response: " + e.getMessage()));
+                runOnUiThread(() -> {
+                    chatTextView.setText("Failed to get response: " + e.getMessage());
+                    e.printStackTrace(); // 打印異常信息
+                });
             }
 
             @Override
@@ -77,7 +83,11 @@ public class AIChatActivity extends AppCompatActivity {
                     String responseBody = response.body().string();
                     runOnUiThread(() -> chatTextView.setText(responseBody));
                 } else {
-                    runOnUiThread(() -> chatTextView.setText("Failed to get response"));
+                    runOnUiThread(() -> {
+                        chatTextView.setText("Failed to get response");
+                        System.out.println("Response code: " + response.code()); // 打印響應代碼
+                        System.out.println("Response message: " + response.message()); // 打印響應信息
+                    });
                 }
             }
         });
