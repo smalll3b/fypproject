@@ -14,11 +14,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.List;
 
-public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdapter.ProductViewHolder> {
+public class ProductStaffAdapter extends RecyclerView.Adapter<ProductStaffAdapter.ProductViewHolder> {
     private List<Product> productList;
     private DatabaseReference mDatabase;
 
-    public Product_staffAdapter(List<Product> productList) {
+    public ProductStaffAdapter(List<Product> productList) {
         this.productList = productList;
         mDatabase = FirebaseDatabase.getInstance().getReference("products");
     }
@@ -36,8 +36,6 @@ public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdap
         holder.nameTextView.setText(product.name);
         holder.brandTextView.setText("Brand\n" + product.brand);
         holder.priceTextView.setText("$" + product.price);
-        //holder.weightTextView.setText("Weight: " + product.weight);
-        //holder.descriptionTextView.setText("Description: " + product.description);
         holder.quantityTextView.setText("Stock\n" + product.quantity);
 
         Glide.with(holder.itemView.getContext())
@@ -89,8 +87,6 @@ public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdap
             nameTextView = itemView.findViewById(R.id.product_name);
             brandTextView = itemView.findViewById(R.id.product_brand);
             priceTextView = itemView.findViewById(R.id.product_price);
-            //weightTextView = itemView.findViewById(R.id.product_weight);
-            //descriptionTextView = itemView.findViewById(R.id.product_description);
             quantityTextView = itemView.findViewById(R.id.product_stock);
             productImageView = itemView.findViewById(R.id.product_image);
             editButton = itemView.findViewById(R.id.edit_button);

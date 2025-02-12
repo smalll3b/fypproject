@@ -15,7 +15,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-public class editActivity extends AppCompatActivity {
+public class ProductEditActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private ImageView productImage;
     private TextView productName, productBrand, productPrice, productWeight, productDescription, productQuantity;
@@ -35,9 +35,6 @@ public class editActivity extends AppCompatActivity {
         productName = findViewById(R.id.product_name);
         productBrand = findViewById(R.id.product_brand);
         productPrice = findViewById(R.id.product_price);
-        //productWeight = findViewById(R.id.product_weight);
-        //productDescription = findViewById(R.id.product_description);
-        //productQuantity = findViewById(R.id.product_quantity);
         editButton = findViewById(R.id.edit_button);
 
         // Get product ID from intent
@@ -45,7 +42,7 @@ public class editActivity extends AppCompatActivity {
 
         // Check if productId is null
         if (productId == null) {
-            Log.e("editActivity", "Product ID is null");
+            Log.e("EditActivity", "Product ID is null");
             finish(); // Close the activity if productId is null
             return;
         }
@@ -58,7 +55,7 @@ public class editActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Navigate to EditProductActivity
-                Intent intent = new Intent(editActivity.this, EditProductActivity.class);
+                Intent intent = new Intent(ProductEditActivity.this, EditProductActivity.class);
                 intent.putExtra("productId", productId);
                 startActivity(intent);
             }
@@ -74,9 +71,6 @@ public class editActivity extends AppCompatActivity {
                     productName.setText(product.name);
                     productBrand.setText(product.brand);
                     productPrice.setText(product.price);
-                    //productWeight.setText(product.weight);
-                    //productDescription.setText(product.description);
-                    //productQuantity.setText(product.quantity);
                     // If there's an image URL, load the image
                 } else {
                     Log.e("editActivity", "Product data is null");

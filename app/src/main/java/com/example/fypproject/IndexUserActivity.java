@@ -2,15 +2,15 @@ package com.example.fypproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,30 +20,31 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaffActivity extends AppCompatActivity {
-
+public class IndexUserActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private Product_staffAdapter productAdapter;
+    private ProductAdapter productAdapter;
     private List<Product> productList = new ArrayList<>();
     private List<Product> filteredProductList = new ArrayList<>();
     private EditText searchEditText;
-    private Button homeBtn, btnLogout;
+    private Button aiChatBtn, btnShoppingCart, btnPersonalInfo;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_index_staff);
+        setContentView(R.layout.activity_index);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        productAdapter = new Product_staffAdapter(filteredProductList);
+        productAdapter = new ProductAdapter(filteredProductList);
         recyclerView.setAdapter(productAdapter);
 
         searchEditText = findViewById(R.id.searchEditText);
         searchEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Do nothing
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -51,31 +52,44 @@ public class StaffActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+                // Do nothing
+            }
         });
 
-        homeBtn = findViewById(R.id.homebtn);
-        btnLogout = findViewById(R.id.btnLogout);
+        aiChatBtn = findViewById(R.id.aiChatBtn);
+        btnShoppingCart = findViewById(R.id.btnShoppingCart);
+        btnPersonalInfo = findViewById(R.id.btnPersonalInfo);
 
-        // Set onClick event for "新增商品" button
-        homeBtn.setOnClickListener(new View.OnClickListener() {
+
+        // Set onClick event for "AI Chat" button
+        aiChatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StaffActivity.this, insertActivity.class);
+                Intent intent = new Intent(IndexUserActivity.this, AIChatActivity.class);
                 startActivity(intent);
             }
         });
 
-        // Set onClick event for "登出" button
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        btnShoppingCart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StaffActivity.this, indexActivity.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(IndexUserActivity.this, ShoppingCartActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
+        btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(IndexUserActivity.this, LoginUserActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // 从Firebase读取数据
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("products");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -84,7 +98,7 @@ public class StaffActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Product product = snapshot.getValue(Product.class);
                     if (product != null) {
-                        product.id = snapshot.getKey(); // 设置 id 字段
+                        product.id = snapshot.getKey(); // Set the id field
                         productList.add(product);
                     }
                 }
@@ -92,7 +106,9 @@ public class StaffActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {}
+            public void onCancelled(DatabaseError databaseError) {
+                // 处理数据库读取错误
+            }
         });
     }
 

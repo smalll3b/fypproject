@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class AdminLoginActivity extends AppCompatActivity {
+public class LoginStaffActivity extends AppCompatActivity {
     private EditText etAdminID, etPassword;
     private Button btnLogin;
     private ImageButton imgbtnReturn;
@@ -29,7 +29,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminLoginActivity.this, StaffActivity.class);
+                Intent intent = new Intent(LoginStaffActivity.this, IndexStaffActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -38,7 +38,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         imgbtnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminLoginActivity.this, indexActivity.class);
+                Intent intent = new Intent(LoginStaffActivity.this, IndexUserActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -47,7 +47,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         tvSwitchUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminLoginActivity.this, UserLoginActivity.class);
+                Intent intent = new Intent(LoginStaffActivity.this, LoginUserActivity.class);
                 startActivity(intent);
                 finish();
             }

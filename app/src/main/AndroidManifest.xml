@@ -49,25 +49,28 @@
             android:name=".StorageActivity"
             android:exported="false" />
         <activity
-            android:name=".indexActivity"
+            android:name=".IndexUserActivity"
             android:exported="false" />
         <activity
             android:name=".insertActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminLoginActivity"
+            android:name=".LoginStaffActivity"
             android:exported="false" />
         <activity
-            android:name=".editActivity"
+            android:name=".ProductEditActivity"
             android:exported="false" />
         <activity
-            android:name=".StaffActivity"
+            android:name=".IndexStaffActivity"
             android:exported="false" />
         <activity
             android:name=".AIChatActivity"
             android:exported="false" />
         <activity
-            android:name=".UserLoginActivity"
+            android:name=".LoginUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShoppingCartActivity"
             android:exported="false" />
     </application>
 

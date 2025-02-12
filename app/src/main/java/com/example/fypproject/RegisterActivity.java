@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         imgbtnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, UserLoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this, LoginUserActivity.class);
                 startActivity(intent);
                 finish();
             }

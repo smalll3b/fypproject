@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class UserLoginActivity extends AppCompatActivity {
+public class LoginUserActivity extends AppCompatActivity {
     private EditText etEmail, etPassword;
     private Button btnLogin, switchUserButton;
     private ImageButton imgbtnReturn;
@@ -30,7 +30,7 @@ public class UserLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserLoginActivity.this, indexActivity.class);
+                Intent intent = new Intent(LoginUserActivity.this, IndexUserActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -39,7 +39,7 @@ public class UserLoginActivity extends AppCompatActivity {
         imgbtnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserLoginActivity.this, indexActivity.class);
+                Intent intent = new Intent(LoginUserActivity.this, IndexUserActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -48,7 +48,7 @@ public class UserLoginActivity extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserLoginActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(LoginUserActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class UserLoginActivity extends AppCompatActivity {
         tvSwitchUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserLoginActivity.this, AdminLoginActivity.class);
+                Intent intent = new Intent(LoginUserActivity.this, LoginStaffActivity.class);
                 startActivity(intent);
                 finish();
             }
