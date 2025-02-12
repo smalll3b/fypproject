@@ -3,9 +3,9 @@
     <item name="btnSelectImage" type="id" />
     <item name="ivProductImageDetail" type="id" />
     <item name="tvProductName" type="id" />
-    <item name="tvProductBrand" type="id" />
+    <item name="product_brand" type="id" />
     <item name="tvProductPrice" type="id" />
-    <item name="tvProductWeight" type="id" />
+    <item name="product_weight" type="id" />
     <item name="tvProductQuantity" type="id" />
-    <item name="tvProductDescription" type="id" />
+    <item name="product_description" type="id" />
 </resources>
