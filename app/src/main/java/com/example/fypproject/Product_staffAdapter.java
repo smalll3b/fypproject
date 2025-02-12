@@ -33,12 +33,12 @@ public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdap
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
-        holder.nameTextView.setText("Name: " + product.name);
-        holder.brandTextView.setText("Brand: " + product.brand);
-        holder.priceTextView.setText("Price: " + product.price);
-        holder.weightTextView.setText("Weight: " + product.weight);
-        holder.descriptionTextView.setText("Description: " + product.description);
-        holder.quantityTextView.setText("Quantity: " + product.quantity);
+        holder.nameTextView.setText(product.name);
+        holder.brandTextView.setText("Brand\n" + product.brand);
+        holder.priceTextView.setText("$" + product.price);
+        //holder.weightTextView.setText("Weight: " + product.weight);
+        //holder.descriptionTextView.setText("Description: " + product.description);
+        //holder.quantityTextView.setText("Quantity: " + product.quantity);
 
         Glide.with(holder.itemView.getContext())
                 .load(product.imageUrl.isEmpty() ? R.drawable.ic_launcher_foreground : product.imageUrl)
@@ -89,9 +89,9 @@ public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdap
             nameTextView = itemView.findViewById(R.id.product_name);
             brandTextView = itemView.findViewById(R.id.product_brand);
             priceTextView = itemView.findViewById(R.id.product_price);
-            weightTextView = itemView.findViewById(R.id.product_weight);
-            descriptionTextView = itemView.findViewById(R.id.product_description);
-            quantityTextView = itemView.findViewById(R.id.product_quantity);
+            //weightTextView = itemView.findViewById(R.id.product_weight);
+            //descriptionTextView = itemView.findViewById(R.id.product_description);
+            //quantityTextView = itemView.findViewById(R.id.product_quantity);
             productImageView = itemView.findViewById(R.id.product_image);
             editButton = itemView.findViewById(R.id.edit_button);
             deleteButton = itemView.findViewById(R.id.delete_button);

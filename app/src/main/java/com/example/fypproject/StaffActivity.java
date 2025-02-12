@@ -55,7 +55,7 @@ public class StaffActivity extends AppCompatActivity {
         });
 
         homeBtn = findViewById(R.id.homebtn);
-        logoutBtn = findViewById(R.id.logoutbtn);
+        //logoutBtn = findViewById(R.id.logoutbtn);
 
         // Set onClick event for "新增商品" button
         homeBtn.setOnClickListener(new View.OnClickListener() {
@@ -66,15 +66,15 @@ public class StaffActivity extends AppCompatActivity {
             }
         });
 
-        // Set onClick event for "登出" button
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StaffActivity.this, AdminLoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        // Set onClick event for "登出" button
+//        logoutBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(StaffActivity.this, AdminLoginActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("products");
         databaseReference.addValueEventListener(new ValueEventListener() {

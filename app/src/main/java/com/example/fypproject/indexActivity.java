@@ -58,7 +58,7 @@ public class indexActivity extends AppCompatActivity {
         });
 
         aiChatBtn = findViewById(R.id.aiChatBtn);
-        logoutBtn = findViewById(R.id.logoutbtn);
+        //logoutBtn = findViewById(R.id.logoutbtn);
         btnPersonalInfo = findViewById(R.id.btnPersonalInfo);
 
 
@@ -71,15 +71,15 @@ public class indexActivity extends AppCompatActivity {
             }
         });
 
-        // Set onClick event for "登出" button
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(indexActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        // Set onClick event for "登出" button
+//        logoutBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(indexActivity.this, MainActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
         btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
             @Override

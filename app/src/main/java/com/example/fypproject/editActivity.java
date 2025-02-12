@@ -35,9 +35,9 @@ public class editActivity extends AppCompatActivity {
         productName = findViewById(R.id.product_name);
         productBrand = findViewById(R.id.product_brand);
         productPrice = findViewById(R.id.product_price);
-        productWeight = findViewById(R.id.product_weight);
-        productDescription = findViewById(R.id.product_description);
-        productQuantity = findViewById(R.id.product_quantity);
+        //productWeight = findViewById(R.id.product_weight);
+        //productDescription = findViewById(R.id.product_description);
+        //productQuantity = findViewById(R.id.product_quantity);
         editButton = findViewById(R.id.edit_button);
 
         // Get product ID from intent
@@ -74,9 +74,9 @@ public class editActivity extends AppCompatActivity {
                     productName.setText(product.name);
                     productBrand.setText(product.brand);
                     productPrice.setText(product.price);
-                    productWeight.setText(product.weight);
-                    productDescription.setText(product.description);
-                    productQuantity.setText(product.quantity);
+                    //productWeight.setText(product.weight);
+                    //productDescription.setText(product.description);
+                    //productQuantity.setText(product.quantity);
                     // If there's an image URL, load the image
                 } else {
                     Log.e("editActivity", "Product data is null");
