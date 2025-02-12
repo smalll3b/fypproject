@@ -33,7 +33,12 @@ public class EditProductActivity extends AppCompatActivity {
             "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2F1000094648?alt=media&token=496c5ae1-724e-4420-8548-64ed2e9bb7e1",
             "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2Fimage%3A31?alt=media&token=148c1176-812e-491b-8772-d98998b265df",
             "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2Fmsf%3A17?alt=media&token=26d15b9e-367c-4645-a04b-51493269192c",
-            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2Fmsf%3A18?alt=media&token=f8110a34-41d1-4245-a4ff-2d2848993751"
+            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2Fmsf%3A18?alt=media&token=f8110a34-41d1-4245-a4ff-2d2848993751",
+            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2F9800x3d.JPG?alt=media&token=caaccb06-2d01-435b-8c3b-745abc44da02",
+            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2FGskillDDR5.JPG?alt=media&token=3b3a475f-49c3-4933-97a9-1fc068532870",
+            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2FROG360.JPG?alt=media&token=eaa5e4d3-78c6-4a5e-b595-fbbe01f97094",
+            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2FROGHeliosCase.JPG?alt=media&token=5a5f2b3f-a20f-48d7-9a20-a2f57f6ca8f9",
+            "https://firebasestorage.googleapis.com/v0/b/fypproject-c6b94.appspot.com/o/images%2FX870A.JPG?alt=media&token=a39da008-5853-4164-ac51-c5f076491621"
     };
 
     @Override
