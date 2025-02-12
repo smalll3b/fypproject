@@ -66,6 +66,9 @@
         <activity
             android:name=".AIChatActivity"
             android:exported="false" />
+        <activity
+            android:name=".UserLoginActivity"
+            android:exported="false" />
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

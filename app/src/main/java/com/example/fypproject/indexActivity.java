@@ -26,7 +26,7 @@ public class indexActivity extends AppCompatActivity {
     private List<Product> productList = new ArrayList<>();
     private List<Product> filteredProductList = new ArrayList<>();
     private EditText searchEditText;
-    private Button aiChatBtn, logoutBtn;
+    private Button aiChatBtn, logoutBtn, btnPersonalInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,7 @@ public class indexActivity extends AppCompatActivity {
 
         aiChatBtn = findViewById(R.id.aiChatBtn);
         logoutBtn = findViewById(R.id.logoutbtn);
+        btnPersonalInfo = findViewById(R.id.btnPersonalInfo);
 
 
         // Set onClick event for "AI Chat" button
@@ -75,6 +76,15 @@ public class indexActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(indexActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(indexActivity.this, UserLoginActivity.class);
                 startActivity(intent);
                 finish();
             }

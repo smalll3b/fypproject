@@ -35,6 +35,7 @@
             android:background="#000000" />
 
         <Button
+            android:id="@+id/btnPersonalInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="個人資料" />
