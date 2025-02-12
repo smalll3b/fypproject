@@ -6,38 +6,50 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class AdminLoginActivity extends AppCompatActivity {
-    private EditText adminIdEditText, adminPasswordEditText;
-    private Button adminLoginButton, switchUserButton;
+    private EditText etAdminID, etPassword;
+    private Button btnLogin;
+    private ImageButton imgbtnReturn;
+    private TextView tvSwitchUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.staff_login);
 
-        adminIdEditText = findViewById(R.id.adminIdEditText);
-        adminPasswordEditText = findViewById(R.id.adminPasswordEditText);
-        adminLoginButton = findViewById(R.id.adminLoginButton);
-        switchUserButton = findViewById(R.id.switchUserButton); // Define the switch user button
+        etAdminID = findViewById(R.id.etAdminID);
+        etPassword = findViewById(R.id.etPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        imgbtnReturn = findViewById(R.id.imgbtnReturn);
+        tvSwitchUser = findViewById(R.id.tvSwitchUser);
 
-        adminLoginButton.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle admin login logic here
                 Intent intent = new Intent(AdminLoginActivity.this, StaffActivity.class);
                 startActivity(intent);
-                finish(); // End current activity
+                finish();
             }
         });
 
-        switchUserButton.setOnClickListener(new View.OnClickListener() {
+        imgbtnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle switch user logic here
-                Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(AdminLoginActivity.this, indexActivity.class);
                 startActivity(intent);
-                finish(); // End current activity
+                finish();
+            }
+        });
+
+        tvSwitchUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminLoginActivity.this, UserLoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

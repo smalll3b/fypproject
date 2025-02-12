@@ -13,7 +13,7 @@ public class UserLoginActivity extends AppCompatActivity {
     private EditText etEmail, etPassword;
     private Button btnLogin, switchUserButton;
     private ImageButton imgbtnReturn;
-    private TextView tvRegister;
+    private TextView tvRegister, tvSwitchUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class UserLoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         imgbtnReturn = findViewById(R.id.imgbtnReturn);
         tvRegister = findViewById(R.id.tvRegister);
-        //switchUserButton = findViewById(R.id.); // Define the switch user button
+        tvSwitchUser = findViewById(R.id.tvSwitchUser);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,14 +53,13 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         });
 
-
-
-//        switchUserButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, AdminLoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        tvSwitchUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserLoginActivity.this, AdminLoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
