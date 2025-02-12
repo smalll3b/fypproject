@@ -27,7 +27,7 @@ public class StaffActivity extends AppCompatActivity {
     private List<Product> productList = new ArrayList<>();
     private List<Product> filteredProductList = new ArrayList<>();
     private EditText searchEditText;
-    private Button homeBtn, logoutBtn;
+    private Button homeBtn, btnLogout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class StaffActivity extends AppCompatActivity {
         });
 
         homeBtn = findViewById(R.id.homebtn);
-        //logoutBtn = findViewById(R.id.logoutbtn);
+        btnLogout = findViewById(R.id.btnLogout);
 
         // Set onClick event for "新增商品" button
         homeBtn.setOnClickListener(new View.OnClickListener() {
@@ -66,15 +66,15 @@ public class StaffActivity extends AppCompatActivity {
             }
         });
 
-//        // Set onClick event for "登出" button
-//        logoutBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(StaffActivity.this, AdminLoginActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        // Set onClick event for "登出" button
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StaffActivity.this, indexActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("products");
         databaseReference.addValueEventListener(new ValueEventListener() {

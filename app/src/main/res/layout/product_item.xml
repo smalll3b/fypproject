@@ -54,7 +54,8 @@
                 android:id="@+id/add_to_cart_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add to Cart"
+                android:layout_weight="1"
+                android:text="Detail"
                 android:layout_gravity="bottom"/>
 
             <Button

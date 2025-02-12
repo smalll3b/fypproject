@@ -26,23 +26,47 @@
             android:textStyle="bold"
             android:layout_weight="1.5"/>
 
-        <TextView
-            android:id="@+id/product_brand"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Brand"
-            android:textSize="14sp"
-            android:textColor="@color/grey"/>
 
-        <TextView
-            android:id="@+id/product_price"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.5"
-            android:text="Price"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:id="@+id/product_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Brand"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Price"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/product_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="20dp"
+                android:textAlignment="viewEnd"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit"
+                android:layout_weight="1"
                 android:layout_gravity="bottom"/>
 
             <Button

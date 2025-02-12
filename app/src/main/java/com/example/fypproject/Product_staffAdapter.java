@@ -38,7 +38,7 @@ public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdap
         holder.priceTextView.setText("$" + product.price);
         //holder.weightTextView.setText("Weight: " + product.weight);
         //holder.descriptionTextView.setText("Description: " + product.description);
-        //holder.quantityTextView.setText("Quantity: " + product.quantity);
+        holder.quantityTextView.setText("Stock\n" + product.quantity);
 
         Glide.with(holder.itemView.getContext())
                 .load(product.imageUrl.isEmpty() ? R.drawable.ic_launcher_foreground : product.imageUrl)
@@ -91,7 +91,7 @@ public class Product_staffAdapter extends RecyclerView.Adapter<Product_staffAdap
             priceTextView = itemView.findViewById(R.id.product_price);
             //weightTextView = itemView.findViewById(R.id.product_weight);
             //descriptionTextView = itemView.findViewById(R.id.product_description);
-            //quantityTextView = itemView.findViewById(R.id.product_quantity);
+            quantityTextView = itemView.findViewById(R.id.product_stock);
             productImageView = itemView.findViewById(R.id.product_image);
             editButton = itemView.findViewById(R.id.edit_button);
             deleteButton = itemView.findViewById(R.id.delete_button);
