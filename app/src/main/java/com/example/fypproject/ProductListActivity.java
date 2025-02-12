@@ -13,7 +13,5 @@ public class ProductListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list); // 假设您的XML布局文件名为activity_product_list.xml
-
-
     }
 }
