@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ShoppingCartActivity extends AppCompatActivity {
-    private Button btnHomePage;
+    private Button btnHomePage, btnPersonalInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +16,21 @@ public class ShoppingCartActivity extends AppCompatActivity {
         setContentView(R.layout.shopping_cart);
 
         btnHomePage = findViewById(R.id.btnHomePage);
+        btnPersonalInfo = findViewById(R.id.btnPersonalInfo);
 
         btnHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShoppingCartActivity.this, IndexUserActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShoppingCartActivity.this, LoginUserActivity.class);
                 startActivity(intent);
                 finish();
             }
