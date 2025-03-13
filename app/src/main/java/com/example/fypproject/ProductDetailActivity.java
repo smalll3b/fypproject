@@ -53,6 +53,23 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         // Load product information from Firebase
         loadProductInfo();
+
+        // Set up button click listeners
+        Button btnAddToCart = findViewById(R.id.btnAddToCart);
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addToCart();
+            }
+        });
+
+        Button btnBuy = findViewById(R.id.btnBuy);
+        btnBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle buy action
+            }
+        });
     }
 
     private void loadProductInfo() {
@@ -80,5 +97,67 @@ public class ProductDetailActivity extends AppCompatActivity {
                 Log.e("ProductDetailActivity", "Failed to load product info", databaseError.toException());
             }
         });
+    }
+
+    private void addToCart() {
+        DatabaseReference cartRef = FirebaseDatabase.getInstance().getReference("cart");
+
+        // 自動生成 cartId
+        String cartId = cartRef.push().getKey();
+
+        // 確保 cartId 不為 null
+        if (cartId != null) {
+            DatabaseReference productRef = FirebaseDatabase.getInstance().getReference("products").child(productId);
+
+            // 從產品節點獲取數據
+            productRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String productName = dataSnapshot.child("name").getValue(String.class);
+                    String priceString = dataSnapshot.child("price").getValue(String.class);
+                    double productPrice = 0.0;
+
+                    try {
+                        productPrice = Double.parseDouble(priceString);
+                    } catch (NumberFormatException e) {
+                        Log.e("addToCart", "價格轉換失敗: " + e.getMessage());
+                    }
+
+                    String productImageUrl = dataSnapshot.child("imageUrl").getValue(String.class);
+                    String productBrand = dataSnapshot.child("brand").getValue(String.class);
+
+                    if (productName != null && productImageUrl != null && productBrand != null) {
+                        // 創建 CartItem 對象，並包含 cartId
+                        CartItem cartItem = new CartItem(
+                                cartId, // 傳入生成的 cartId
+                                productId,
+                                productName,
+                                1, // 預設數量
+                                productPrice,
+                                productImageUrl,
+                                productBrand
+                        );
+
+                        // 將 CartItem 添加到 Firebase
+                        cartRef.child(cartId).setValue(cartItem).addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Log.i("addToCart", "產品成功添加到購物車，cartId: " + cartId);
+                            } else {
+                                Log.e("addToCart", "添加產品到購物車失敗");
+                            }
+                        });
+                    } else {
+                        Log.e("addToCart", "產品數據不完整或為空");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.e("addToCart", "獲取產品數據失敗", databaseError.toException());
+                }
+            });
+        } else {
+            Log.e("addToCart", "無法生成 cartId");
+        }
     }
 }

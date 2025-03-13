@@ -1,15 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#12568C">
 
+    <!-- 搜尋與標題區域 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
         android:layout_marginHorizontal="15dp"
         android:orientation="horizontal">
 
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="購物車"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:layout_marginRight="50dp"
             android:textSize="24sp" />
 
@@ -36,26 +36,38 @@
                 android:hint="搜尋"
                 android:padding="8dp"
                 android:textSize="14sp"
-                android:textColorHint="@color/grey" />
-
+                android:textColorHint="@android:color/darker_gray" />
         </LinearLayout>
-
     </LinearLayout>
 
+    <!-- 總價 -->
+    <TextView
+        android:id="@+id/totalPriceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="總價：$0.00"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp" />
+
+    <!-- 商品清單 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/white"/>
+        android:background="@android:color/white" />
 
+    <!-- 底部導航欄 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-
-        android:background="@color/white">
+        android:background="@android:color/white">
 
         <Button
             android:id="@+id/btnHomePage"
@@ -90,7 +102,5 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="個人資料" />
-
     </LinearLayout>
-
 </LinearLayout>
