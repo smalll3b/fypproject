@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#12568C">
+
+    <!-- 搜尋與標題區域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="訂單資料"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_bar"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:hint="搜尋訂單"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:textColorHint="@android:color/darker_gray" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 分隔線 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white"
+        android:layout_marginVertical="10dp" />
+
+    <!-- 商品清單 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ordersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="15dp"
+        android:background="@android:color/white" />
+
+    <!-- 底部導航欄 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/btnHomePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="主頁" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="分類" />
+
+        <Button
+            android:id="@+id/aiChatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="AI Chat" />
+
+        <Button
+            android:id="@+id/btnShoppingCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="購物車" />
+
+        <Button
+            android:id="@+id/btnPersonalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="個人資料" />
+    </LinearLayout>
+</LinearLayout>

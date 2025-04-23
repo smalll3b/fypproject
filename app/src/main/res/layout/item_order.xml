@@ -1,0 +1,29 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/orderIdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="訂單編號"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/productNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商品名稱"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/orderDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下單日期"
+        android:textSize="16sp" />
+</LinearLayout>

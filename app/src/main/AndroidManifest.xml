@@ -72,6 +72,12 @@
         <activity
             android:name=".ShoppingCartActivity"
             android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailActivity"
+            android:exported="false" />
     </application>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

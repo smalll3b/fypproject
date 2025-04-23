@@ -83,7 +83,7 @@ public class IndexUserActivity extends AppCompatActivity {
         btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexUserActivity.this, LoginUserActivity.class);
+                Intent intent = new Intent(IndexUserActivity.this, ProfileActivity.class);
                 startActivity(intent);
                 finish();
             }
