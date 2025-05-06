@@ -1,7 +1,10 @@
 package com.example.fypproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDetailActivity extends AppCompatActivity {
+    private ImageButton imgbtnReturn;
     private RecyclerView ordersRecyclerView;
     private OrdersAdapter ordersAdapter;
     private List<OrderItem> orderItemList;
@@ -30,6 +34,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order_detail);
 
         // 初始化 RecyclerView
+        imgbtnReturn = findViewById(R.id.imgbtnReturn);
         ordersRecyclerView = findViewById(R.id.ordersRecyclerView);
         ordersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         orderItemList = new ArrayList<>();
@@ -41,6 +46,15 @@ public class OrderDetailActivity extends AppCompatActivity {
 
         // 加載訂單數據
         loadOrders();
+
+        imgbtnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderDetailActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void loadOrders() {

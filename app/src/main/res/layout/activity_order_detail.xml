@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,19 +10,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="15dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:background="#12568C">
 
-        <TextView
-            android:id="@+id/textViewTitle"
+        <ImageButton
+            android:id="@+id/imgbtnReturn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="訂單資料"
-            android:textColor="@android:color/white"
-            android:layout_marginEnd="20dp"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:background="@null"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,14 +38,8 @@
                 android:textSize="14sp"
                 android:textColorHint="@android:color/darker_gray" />
         </LinearLayout>
-    </LinearLayout>
 
-    <!-- 分隔線 -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/white"
-        android:layout_marginVertical="10dp" />
+    </LinearLayout>
 
     <!-- 商品清單 -->
     <androidx.recyclerview.widget.RecyclerView
@@ -54,49 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginHorizontal="15dp"
         android:background="@android:color/white" />
 
-    <!-- 底部導航欄 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@android:color/white">
-
-        <Button
-            android:id="@+id/btnHomePage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="主頁" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="分類" />
-
-        <Button
-            android:id="@+id/aiChatBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="AI Chat" />
-
-        <Button
-            android:id="@+id/btnShoppingCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="購物車" />
-
-        <Button
-            android:id="@+id/btnPersonalInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="個人資料" />
-    </LinearLayout>
 </LinearLayout>

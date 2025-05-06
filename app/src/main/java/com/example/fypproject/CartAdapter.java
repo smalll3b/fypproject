@@ -37,8 +37,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         // 綁定數據到視圖
         holder.productName.setText(cartItem.productName);
-        holder.productBrand.setText("品牌: " + cartItem.productBrand);
-        holder.productPrice.setText("價格: $" + cartItem.price);
+        holder.productBrand.setText(cartItem.productBrand);
+        holder.productPrice.setText("$" + cartItem.price);
         holder.productQuantity.setText("數量: " + cartItem.quantity);
 
         // 使用 Glide 加載圖片

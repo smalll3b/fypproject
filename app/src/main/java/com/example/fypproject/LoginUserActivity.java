@@ -30,35 +30,29 @@ public class LoginUserActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginUserActivity.this, IndexUserActivity.class);
-                startActivity(intent);
-                finish();
+                UserLogin.setLoggingState(true);
+                Navigator.startActivityAndFinish(LoginUserActivity.this, IndexUserActivity.class);
             }
         });
 
         imgbtnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginUserActivity.this, IndexUserActivity.class);
-                startActivity(intent);
-                finish();
+                Navigator.startActivityAndFinish(LoginUserActivity.this, IndexUserActivity.class);
             }
         });
 
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginUserActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                Navigator.startActivityAndFinish(LoginUserActivity.this, RegisterActivity.class);
             }
         });
 
         tvSwitchUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginUserActivity.this, LoginStaffActivity.class);
-                startActivity(intent);
-                finish();
+                Navigator.startActivityAndFinish(LoginUserActivity.this, LoginStaffActivity.class);
             }
         });
     }

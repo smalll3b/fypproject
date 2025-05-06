@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCartActivity extends AppCompatActivity {
-    private Button btnHomePage, btnPersonalInfo;
+    private Button btnHomePage, btnPersonalInfo, btnAIChat;
     private EditText searchEditText;
     private TextView totalPriceText;
     private RecyclerView recyclerView;
@@ -41,6 +42,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         // 初始化視圖
         btnHomePage = findViewById(R.id.btnHomePage);
         btnPersonalInfo = findViewById(R.id.btnPersonalInfo);
+        btnAIChat = findViewById(R.id.aiChatBtn);
         searchEditText = findViewById(R.id.searchEditText);
         totalPriceText = findViewById(R.id.totalPriceText);
         recyclerView = findViewById(R.id.recyclerView);
@@ -57,15 +59,25 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
         // 按鈕點擊事件
         btnHomePage.setOnClickListener(view -> {
-            Intent intent = new Intent(ShoppingCartActivity.this, IndexUserActivity.class);
-            startActivity(intent);
-            finish();
+            Navigator.startActivityAndFinish(ShoppingCartActivity.this, IndexUserActivity.class);
         });
 
-        btnPersonalInfo.setOnClickListener(v -> {
-            Intent intent = new Intent(ShoppingCartActivity.this, LoginUserActivity.class);
-            startActivity(intent);
-            finish();
+        btnAIChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigator.startActivityAndFinish(ShoppingCartActivity.this, AIChatActivity.class);
+            }
+        });
+
+        btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (UserLogin.isLogged()) {
+                    Navigator.startActivityAndFinish(ShoppingCartActivity.this, ProfileActivity.class);
+                }else {
+                    Navigator.startActivityAndFinish(ShoppingCartActivity.this, LoginUserActivity.class);
+                }
+            }
         });
 
         // 加載購物車數據

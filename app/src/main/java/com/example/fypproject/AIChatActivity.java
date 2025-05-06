@@ -1,9 +1,11 @@
 package com.example.fypproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -16,7 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 public class AIChatActivity extends AppCompatActivity {
-
+    private ImageButton imgbtnReturn;
     private ChatViewModel chatViewModel;
     private LinearLayout chatLayout;
     private ScrollView scrollView;
@@ -26,6 +28,7 @@ public class AIChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ai_chat);
 
+        imgbtnReturn = findViewById(R.id.imgbtnReturn);
         EditText inputMessage = findViewById(R.id.inputMessage);
         Button sendButton = findViewById(R.id.sendButton);
         chatLayout = findViewById(R.id.chatLayout);
@@ -44,6 +47,15 @@ public class AIChatActivity extends AppCompatActivity {
                 addMessageToChat("你", message);  // 顯示用戶訊息
                 chatViewModel.sendMessage(message); // 傳送給 AI
                 inputMessage.setText(""); // 清空輸入框
+            }
+        });
+
+        imgbtnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AIChatActivity.this, IndexUserActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

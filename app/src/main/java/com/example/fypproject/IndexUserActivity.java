@@ -61,31 +61,28 @@ public class IndexUserActivity extends AppCompatActivity {
         btnShoppingCart = findViewById(R.id.btnShoppingCart);
         btnPersonalInfo = findViewById(R.id.btnPersonalInfo);
 
-
-        // Set onClick event for "AI Chat" button
         aiChatBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexUserActivity.this, AIChatActivity.class);
-                startActivity(intent);
+                Navigator.startActivityAndFinish(IndexUserActivity.this, AIChatActivity.class);
             }
         });
 
         btnShoppingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IndexUserActivity.this, ShoppingCartActivity.class);
-                startActivity(intent);
-                finish();
+                Navigator.startActivityAndFinish(IndexUserActivity.this, ShoppingCartActivity.class);
             }
         });
 
         btnPersonalInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexUserActivity.this, ProfileActivity.class);
-                startActivity(intent);
-                finish();
+                if (UserLogin.isLogged()) {
+                    Navigator.startActivityAndFinish(IndexUserActivity.this, ProfileActivity.class);
+                }else {
+                    Navigator.startActivityAndFinish(IndexUserActivity.this, LoginUserActivity.class);
+                }
             }
         });
 
